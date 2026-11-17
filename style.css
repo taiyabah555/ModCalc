@@ -206,3 +206,37 @@ footer {
         font-size: 38px;
     }
 }
+
+/* =====================================
+   ModCalc - Dark Dropdown Styling
+===================================== */
+
+select {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #0f172a;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Dropdown options */
+select option {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    padding: 10px;
+}
+
+/* Disabled or placeholder options, if added later */
+select option:disabled {
+    color: #94a3b8;
+}

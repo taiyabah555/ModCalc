@@ -7,6 +7,7 @@
     <meta name="description" content="ModCalc - A fast modular arithmetic calculator for students.">
     <title>ModCalc | Modular Arithmetic Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.jpg.png">
 </head>
 <body>
 
@@ -18,13 +19,27 @@
     <main class="container">
 
         <section class="calculator">
-            <h1>Modulo Calculator</h1>
+            <h1>Modular Arithmetic Calculator</h1>
             <p class="subtitle">
-                Calculate remainders quickly and accurately.
+                Calculate modular arithmetic quickly and accurately.
             </p>
 
+            <!-- Operation Selection -->
             <div class="input-group">
-                <label for="dividend">Dividend (a)</label>
+                <label for="operation">Choose Operation</label>
+                <select id="operation">
+                    <option value="modulo">Modulo (a mod n)</option>
+                    <option value="addition">Addition ((a + b) mod n)</option>
+                    <option value="subtraction">Subtraction ((a - b) mod n)</option>
+                    <option value="multiplication">Multiplication ((a × b) mod n)</option>
+                    <option value="exponentiation">Exponentiation (a^b mod n)</option>
+                    <option value="inverse">Modular Inverse (a⁻¹ mod n)</option>
+                </select>
+            </div>
+
+            <!-- First Number -->
+            <div class="input-group">
+                <label for="dividend">First Number (a)</label>
                 <input
                     type="text"
                     id="dividend"
@@ -33,6 +48,18 @@
                 >
             </div>
 
+            <!-- Second Number -->
+            <div class="input-group" id="secondNumberGroup" hidden>
+                <label for="secondNumber">Second Number (b)</label>
+                <input
+                    type="text"
+                    id="secondNumber"
+                    placeholder="Enter an integer"
+                    inputmode="numeric"
+                >
+            </div>
+
+            <!-- Modulus -->
             <div class="input-group">
                 <label for="modulus">Modulus (n)</label>
                 <input
@@ -43,18 +70,18 @@
                 >
             </div>
 
-            <button id="calculateBtn">Calculate Modulo</button>
+            <button id="calculateBtn">Calculate</button>
 
             <p id="errorMessage" class="error-message" aria-live="polite"></p>
 
+            <!-- Results -->
             <section id="resultSection" class="result-section" hidden>
-                <p class="result-label">REMAINDER</p>
+                <p class="result-label">RESULT</p>
                 <div id="result" class="result">0</div>
 
                 <div class="calculation-details">
-                    <h3>Calculation Steps</h3>
-                    <p id="quotient"></p>
-                    <p id="equation"></p>
+                    <h3>Step-by-Step Solution</h3>
+                    <div id="steps"></div>
                 </div>
             </section>
 
