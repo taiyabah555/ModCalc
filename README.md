@@ -3,6 +3,10 @@
 
 **A fast, simple, and free modular arithmetic calculator.**
 
+🚀 [**Try ModCalc Live**](https://taiyabah555.github.io/ModCalc/)
+
+Use the calculator directly in your browser — no installation or coding required!
+
 ModCalc is an open-source web-based calculator designed to help students understand and solve modular arithmetic problems quickly and accurately.
 
 ## ✨ Features
